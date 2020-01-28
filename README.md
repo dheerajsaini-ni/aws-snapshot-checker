@@ -21,5 +21,7 @@ pip3 install pipenv
 Then run the project
 ```
 pipenv install
-pipenv run python meteors/find_objects.py
+pipenv run python aws/ec2-manager.py <command> <--project=PROJECT>
 ```
+
+*Command* is list, start or stop
