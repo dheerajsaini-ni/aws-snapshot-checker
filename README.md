@@ -21,7 +21,7 @@ pip3 install pipenv
 Then run the project
 ```
 pipenv install
-pipenv run python aws/ec2-manager.py <command> <--project=PROJECT>
+pipenv run python aws/ec2-manager.py <command> <subcommand> <--project=PROJECT>
 ```
 
-*Command* is list, start or stop
+*Command* is instances, volumes or snapshots
