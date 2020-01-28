@@ -57,8 +57,16 @@ def create_snapshot(project):
     instances = filter_instances(project)
 
     for i in instances:
+        print("Stopping {0}...".format(i.id))
+        i.stop()
+        i.wait_until_stopped()
         for v in i.volumes.all():
             v.create_snapshot(Description="Created by EC2 Manager")
+
+        print("Starting {0}...".format(i.id))
+        i.start()
+        i.wait_until_running()
+    print("Snapshot process complete!")
     return
 
 @volumes.command('list')
